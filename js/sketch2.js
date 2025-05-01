@@ -10,7 +10,7 @@ function preload() {
 function setup() {
     createCanvas(windowWidth, windowHeight);
     background('white');
-    let link = createA("http://127.0.0.1:5500/page5.html", "cloud"); 
+    let link = createA("page5.html", "cloud"); 
     link.position(745, 630);
     link.style('font-family', 'Junge');
   link.style('font-size', '50px');

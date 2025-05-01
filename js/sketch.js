@@ -16,7 +16,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   background('#90C6EC');
 
-  let link = createA("http://127.0.0.1:5500/page4.html", "melodies ");
+  let link = createA("page4.html", "melodies ");
   link.style('font-family', 'Junge');
   link.style('font-size', '50px');
   link.style('color', '#FFD039');

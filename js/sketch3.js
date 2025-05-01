@@ -14,7 +14,7 @@ function windowResized(){
 function setup() {
     createCanvas(windowWidth, windowHeight);
     background('white');
-    let link = createA("http://127.0.0.1:5500/page6.html", "world"); 
+    let link = createA("page6.html", "world"); 
     link.position(772, 608);
     link.style('font-family', 'Junge');
   link.style('font-size', '50px');
