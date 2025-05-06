@@ -1,5 +1,6 @@
 let images = [];
 let currentImageIndex = 0;
+let link;
 
 function windowResized(){
   resizeCanvas(windowWidth, windowHeight);
@@ -15,13 +16,15 @@ function preload(){
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background('#90C6EC');
+  imageMode(CENTER);
 
-  let link = createA("http://127.0.0.1:5500/page4.html", "melodies ");
+
+  link = createA("page4.html", "melodies ");
   link.style('font-family', 'Junge');
   link.style('font-size', '50px');
   link.style('color', '#FFD039');
   link.style('text-decoration', 'none');
-  link.position(735, 595)
+  link.position(windowWidth / 2 - link.width / 2., windowHeight * 0.85);
 }
 
 function draw() { 
@@ -29,36 +32,51 @@ function draw() {
   textFont("Junge");
   textSize(50);
   textAlign(CENTER);
-  text('Bring me all of your', width / 2, height / 4);  // Dynamically center text vertically
+  text('Bring me all of your', width / 2, height / 4);  
 
-  // Draw heart in the center
-  drawHeart(width / 2, height / 2);
+  drawHeart(width / 2, height / 2,);
 
-  text('Heart ', width / 2.34, height - 100);  // Dynamically position bottom text
+  textAlign(LEFT);
+  fill('black');
+
+  let heartX = width / 2; 
+  let heartY = height * 0.85;
+
+  text('Heart', heartX, heartY);
+
+  let heartWidth = textWidth('Heart');
+
+  if (link) {
+    link.position(heartX + heartWidth + 10, heartY - 46); 
+  }
+
+  textAlign(CENTER);
+  textSize(20);
+  fill('black');
+  text('(Click Around)', width/2, height/1.10);
 }
 
-function drawHeart(x, y) {
-  fill('#FFD039'); // Color of the heart
+//modified from internet
+function drawHeart() {
+  fill('#FFD039'); 
   noStroke();
-  
-  let r = 40; // Increased size of the heart
-  
-  // Draw heart using parametric equations
+  push();
+  translate(width / 2, height / 2)
+
+  scale(8)
+
   beginShape();
-  for (let a = 0; a < TWO_PI; a += 0.1) {
-    const xPos = r * pow(sin(a), 3);
-    const yPos = -r * (13 * cos(a) - 5 * cos(2 * a) - 2 * cos(3 * a) - cos(4 * a));
-    
-    // Center and scale the heart shape
-    vertex(x + xPos, y + yPos);
-  }
-  endShape(CLOSE);
+  vertex(0, 0);
+  bezierVertex(0, -20, 40, -10, 0, 25);
+  vertex(0, 0);
+  bezierVertex(0, -20, -40, -10, 0, 25);
+  endShape();
+  
+  pop();
 }
 
 function mousePressed() {
-  imageMode(CENTER);
   image(images[currentImageIndex], mouseX, mouseY);
 
-  // Cycle to the next image
-  currentImageIndex = (currentImageIndex + 1) % images.length;  // Loop back to 0 after the last image
+  currentImageIndex = (currentImageIndex + 1) % images.length;  
 }

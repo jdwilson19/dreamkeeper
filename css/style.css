@@ -5,11 +5,10 @@ html, body {
   padding: 0;
   background-color: #00074A;
   background-image: url("../bg.png");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-attachment: fixed;
-  background-size: 100% 100%;
+  background-size: 30% 50%;
 }
-
 
 canvas {
   display: block;
@@ -20,28 +19,33 @@ h1{
   font-family: "Junge", cursive;
   font-style: normal;
   color: white;
-  font-size: 80px;
+  font-size: 500%;
   text-align: center;
   font-weight: 400;
 }
 
 h3{
   font-family: "Italianno", cursive;
-  font-weight: 400;
-  color: #FFD039;
-  font-size: 60px;
+  font-weight: 500;
+  color: white;
+  font-size: 400%;
   text-align: center;
 }
 
 a{
   text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: #FFD039;
 }
 
 h2{
   font-family: "Italianno", cursive;
   font-weight: 400;
-  color: #FFD039;
-  font-size: 90px;
+  color: white;
+  font-size: 1500%;
   animation: fadeIn 2s ease-in;
 }
 
@@ -56,6 +60,7 @@ h2{
   align-items: center;
   height: 100vh;
 }
+
 .centered {
   display: flex;
   justify-content: center;
@@ -76,8 +81,8 @@ img{
 p{
   font-family: "Junge", cursive;
   font-style: normal;
-  color: #90C6EC;
-  font-size: 50px;
+  color: white;
+  font-size: 70px;
   text-align: center;
   font-weight: 400;
 }
@@ -88,11 +93,11 @@ p{
   position: relative;
   animation: float 3s ease-in-out infinite;
   display: flex;
-  justify-content: center; /* horizontal alignment */
-  align-items: center;     /* vertical alignment */
+  justify-content: center; 
+  align-items: center;     
   height: 100vh;   
-  margin: 0 auto; /* optional: center horizontally */
-  }
+  margin: 0 auto; 
+}
 
 @keyframes float {
   0% {
@@ -106,3 +111,4 @@ p{
   100% {
       transform: translateY(0);
   }
+}
