@@ -22,7 +22,7 @@ function setup() {
   link = createA("page4.html", "melodies ");
   link.style('font-family', 'Junge');
   link.style('font-size', '50px');
-  link.style('color', '#FFD039');
+  link.style('color', 'black');
   link.style('text-decoration', 'none');
   link.position(windowWidth / 2 - link.width / 2., windowHeight * 0.85);
 }
